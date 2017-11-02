@@ -13,11 +13,17 @@
                     sign-in(v-if="sign === 'sign-in'",
                         @addUser="isMainPage = $event.mainPage, signComplete = $event.complete, email = $event.email, uid = $event.uid")
                     sign-up(v-else, @regSuccess="sign = $event")
+        .container(v-else)
+            .row
+                .col
+                    main-page(:uid="uid")
+
 </template>
 
 <script>
     import SignIn from './components/SignIn.vue'
     import SignUp from './components/SignUp.vue'
+    import MainPage from './components/MainPage.vue'
 
     export default {
         name: 'app',
@@ -32,7 +38,8 @@
         },
         components: {
             SignIn,
-            SignUp
+            SignUp,
+            MainPage
 
         },
         methods: {
@@ -44,5 +51,7 @@
 </script>
 
 <style lang="scss">
-
+    span {
+        color: #fff;
+    }
 </style>

@@ -27,7 +27,6 @@
                 firebase.auth().signInWithEmailAndPassword(this.user.email, this.user.password)
                     .then( ( response ) => {
                         //this.$emit('regSuccess', 'sign-in');
-                        console.log(response);
                         const sett = {
                             uid: response.uid,
                             email: response.email,
